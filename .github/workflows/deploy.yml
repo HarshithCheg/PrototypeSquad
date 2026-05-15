@@ -17,11 +17,12 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 20
-          cache: 'pnpm'
 
-      - run: pnpm install --ignore-scripts
-
-      - run: pnpm --filter @workspace/portfolio build
+      - name: Install dependencies
+        run: pnpm install --ignore-scripts --filter @workspace/portfolio...
+        
+      - name: Build
+        run: pnpm --filter @workspace/portfolio build
 
       - uses: peaceiris/actions-gh-pages@v3
         with:
