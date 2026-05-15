@@ -12,7 +12,7 @@ jobs:
 
       - uses: pnpm/action-setup@v2
         with:
-          version: 8
+          version: 9
 
       - uses: actions/setup-node@v3
         with:
@@ -20,7 +20,7 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --ignore-scripts --filter @workspace/portfolio...
-        
+
       - name: Build
         run: pnpm --filter @workspace/portfolio build
 

@@ -5,10 +5,7 @@ import path from "path";
 
 export default defineConfig({
   base: "/PrototypeSquad/",
-  plugins: [
-    react(),
-    tailwindcss(),
-  ],
+  plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "src"),
