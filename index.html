@@ -598,7 +598,7 @@ function buildInterviews(){
   const transcriptsBody = PEOPLE.map(p=>{
     if(p.key==='harshith'){
       return personAcc('transcripts', p, buildFileViewer([
-        {name:'Transcript_007.pdf', label:'Transcript', url: BASE_007+'Transcript_007.pdf'},
+        {name:'Transcripts_007.pdf', label:'Transcripts', url: BASE_007+'Transcripts_007.pdf'},
       ]));
     }
     return personAcc('transcripts', p, buildDriveBox('transcripts-'+p.key));
