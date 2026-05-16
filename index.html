@@ -229,21 +229,21 @@ footer{border-top:1px solid #e5e7eb;background:#f9fafb;padding:1.5rem 2rem}
       <button class="nav-btn" onclick="goSection('team')">Team</button>
       <div class="dropdown" id="files-dd">
         <button class="nav-btn" onclick="toggleDD()" style="display:flex;align-items:center;gap:.35rem">
-          📁 Files
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg> Files
           <svg id="dd-chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transition:transform .2s"><path d="M6 9l6 6 6-6"/></svg>
         </button>
         <div class="dd-menu" id="dd-menu">
           <div class="dd-header">Upload &amp; View Files</div>
-          <button class="dd-item" onclick="showPage('interviews');closeDD()">🎤 Interviews</button>
-          <button class="dd-item" onclick="showPage('personas');closeDD()">👤 Personas</button>
-          <button class="dd-item" onclick="showPage('journey-maps');closeDD()">🗺️ Journey Maps</button>
-          <button class="dd-item" onclick="showPage('surveys');closeDD()">📋 Surveys</button>
-          <button class="dd-item" onclick="showPage('ideation');closeDD()">💡 Ideation</button>
-          <button class="dd-item" onclick="showPage('resources');closeDD()">📚 Resources</button>
+          <button class="dd-item" onclick="showPage('interviews');closeDD()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v4M8 23h8"/></svg> Interviews</button>
+          <button class="dd-item" onclick="showPage('personas');closeDD()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Personas</button>
+          <button class="dd-item" onclick="showPage('journey-maps');closeDD()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4zM8 2v16M16 6v16"/></svg> Journey Maps</button>
+          <button class="dd-item" onclick="showPage('surveys');closeDD()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="2"/></svg> Surveys</button>
+          <button class="dd-item" onclick="showPage('ideation');closeDD()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 017 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 01-2 2H10a2 2 0 01-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 017-7z"/></svg> Ideation</button>
+          <button class="dd-item" onclick="showPage('resources');closeDD()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg> Resources</button>
         </div>
       </div>
     </div>
-    <button class="hamburger nav-btn" onclick="toggleMob()">☰</button>
+    <button class="hamburger nav-btn" onclick="toggleMob()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
   </div>
   <div class="mob-menu" id="mob-menu">
     <span class="mob-label">Sections</span>
@@ -253,12 +253,12 @@ footer{border-top:1px solid #e5e7eb;background:#f9fafb;padding:1.5rem 2rem}
     <button class="mob-link" onclick="goSection('learnings');closeMob()">Learnings</button>
     <button class="mob-link" onclick="goSection('team');closeMob()">Team</button>
     <span class="mob-label" style="margin-top:1rem">Files</span>
-    <button class="mob-link" onclick="showPage('interviews');closeMob()">🎤 Interviews</button>
-    <button class="mob-link" onclick="showPage('personas');closeMob()">👤 Personas</button>
-    <button class="mob-link" onclick="showPage('journey-maps');closeMob()">🗺️ Journey Maps</button>
-    <button class="mob-link" onclick="showPage('surveys');closeMob()">📋 Surveys</button>
-    <button class="mob-link" onclick="showPage('ideation');closeMob()">💡 Ideation</button>
-    <button class="mob-link" onclick="showPage('resources');closeMob()">📚 Resources</button>
+    <button class="mob-link" onclick="showPage('interviews');closeMob()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v4M8 23h8"/></svg> Interviews</button>
+    <button class="mob-link" onclick="showPage('personas');closeMob()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Personas</button>
+    <button class="mob-link" onclick="showPage('journey-maps');closeMob()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4zM8 2v16M16 6v16"/></svg> Journey Maps</button>
+    <button class="mob-link" onclick="showPage('surveys');closeMob()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="2"/></svg> Surveys</button>
+    <button class="mob-link" onclick="showPage('ideation');closeMob()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 017 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 01-2 2H10a2 2 0 01-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 017-7z"/></svg> Ideation</button>
+    <button class="mob-link" onclick="showPage('resources');closeMob()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg> Resources</button>
   </div>
 </nav>
 
@@ -276,11 +276,11 @@ footer{border-top:1px solid #e5e7eb;background:#f9fafb;padding:1.5rem 2rem}
         <a class="btn btn-outline" href="https://vertical-file-hub--koushikvakadani.replit.app" target="_blank">Try Belong</a>
       </div>
       <div class="stat-cards">
-        <div class="stat-card"><div class="stat-icon">👥</div><div class="stat-label">7 Team members</div></div>
-        <div class="stat-card"><div class="stat-icon">🎤</div><div class="stat-label">21 Interviews</div></div>
-        <div class="stat-card"><div class="stat-icon">📋</div><div class="stat-label">30+ Survey responses</div></div>
-        <div class="stat-card"><div class="stat-icon">💡</div><div class="stat-label">1,470 Ideas generated</div></div>
-        <div class="stat-card"><div class="stat-icon">📱</div><div class="stat-label">1 Solution built</div></div>
+        <div class="stat-card"><div class="stat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div><div class="stat-label">7 Team members</div></div>
+        <div class="stat-card"><div class="stat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v4M8 23h8"/></svg></div><div class="stat-label">21 Interviews</div></div>
+        <div class="stat-card"><div class="stat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="2"/></svg></div><div class="stat-label">30+ Survey responses</div></div>
+        <div class="stat-card"><div class="stat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 017 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 01-2 2H10a2 2 0 01-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 017-7z"/></svg></div><div class="stat-label">1,470 Ideas generated</div></div>
+        <div class="stat-card"><div class="stat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></div><div class="stat-label">1 Solution built</div></div>
       </div>
     </div>
   </section>
@@ -304,11 +304,11 @@ footer{border-top:1px solid #e5e7eb;background:#f9fafb;padding:1.5rem 2rem}
         <p class="sec-sub">The app we built because the data told us to. For teenagers who feel disconnected.</p>
       </div>
       <div class="features-grid">
-        <div class="feat-card"><div class="feat-icon">☀️</div><h3>Morning check-in</h3><p>A 30-second mood log that shapes your entire day. Quick, non-intrusive, and surprisingly powerful.</p></div>
-        <div class="feat-card"><div class="feat-icon">🛡️</div><h3>Peer circles</h3><p>Anonymous support groups matched by shared feeling. You are not alone — you just haven't found your people yet.</p></div>
-        <div class="feat-card"><div class="feat-icon">🎓</div><h3>Senior mentor match</h3><p>Paired with someone who has been through it. Real guidance, real empathy, not a chatbot.</p></div>
-        <div class="feat-card"><div class="feat-icon">⚡</div><h3>Micro-challenges</h3><p>Small daily actions that build real connection. Because connection is a skill, not a gift.</p></div>
-        <div class="feat-card"><div class="feat-icon">❤️</div><h3>Counsellor bridge</h3><p>A warm, not cold, path to school support. No cold forms, no waiting rooms — just a gentle bridge.</p></div>
+        <div class="feat-card"><div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div><h3>Morning check-in</h3><p>A 30-second mood log that shapes your entire day. Quick, non-intrusive, and surprisingly powerful.</p></div>
+        <div class="feat-card"><div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Peer circles</h3><p>Anonymous support groups matched by shared feeling. You are not alone — you just haven't found your people yet.</p></div>
+        <div class="feat-card"><div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div><h3>Senior mentor match</h3><p>Paired with someone who has been through it. Real guidance, real empathy, not a chatbot.</p></div>
+        <div class="feat-card"><div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h3>Micro-challenges</h3><p>Small daily actions that build real connection. Because connection is a skill, not a gift.</p></div>
+        <div class="feat-card"><div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div><h3>Counsellor bridge</h3><p>A warm, not cold, path to school support. No cold forms, no waiting rooms — just a gentle bridge.</p></div>
       </div>
       <div class="belong-cta">
         <div>
@@ -371,12 +371,12 @@ footer{border-top:1px solid #e5e7eb;background:#f9fafb;padding:1.5rem 2rem}
       <h3>Want to explore the files?</h3>
       <p>All our research artifacts are available to view and download.</p>
       <div class="cta-btns">
-        <button class="btn btn-outline" onclick="showPage('interviews')">Interviews</button>
-        <button class="btn btn-outline" onclick="showPage('personas')">Personas</button>
-        <button class="btn btn-outline" onclick="showPage('journey-maps')">Journey Maps</button>
-        <button class="btn btn-outline" onclick="showPage('surveys')">Surveys</button>
-        <button class="btn btn-outline" onclick="showPage('ideation')">Ideation</button>
-        <button class="btn btn-outline" onclick="showPage('resources')">Resources</button>
+        <button class="btn btn-outline" onclick="showPage('interviews')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v4M8 23h8"/></svg> Interviews</button>
+        <button class="btn btn-outline" onclick="showPage('personas')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Personas</button>
+        <button class="btn btn-outline" onclick="showPage('journey-maps')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4zM8 2v16M16 6v16"/></svg> Journey Maps</button>
+        <button class="btn btn-outline" onclick="showPage('surveys')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="2"/></svg> Surveys</button>
+        <button class="btn btn-outline" onclick="showPage('ideation')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="11" cy="11" r="2"/></svg> Ideation</button>
+        <button class="btn btn-outline" onclick="showPage('resources')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg> Resources</button>
       </div>
     </div>
   </section>
@@ -399,7 +399,7 @@ footer{border-top:1px solid #e5e7eb;background:#f9fafb;padding:1.5rem 2rem}
 </footer>
 
 <script>
-const BASE = 'https://raw.githubusercontent.com/HarshithCheg/PrototypeSquad/main/files/';
+const BASE = 'https://harshithcheg.github.io/PrototypeSquad/files/';
 const BASE_007 = BASE + 'se24uari007/';
 
 const TEAM = [
@@ -620,9 +620,9 @@ function buildInterviews(){
       <p>21 conversations with teenagers aged 15+. Semi-structured, empathy-driven, and deeply revealing.</p>
     </div>
     <div class="page-body">
-      ${secAcc('int-audio','🎤','Audio Recordings','Raw interview recordings from all 21 sessions.',audioBody,true)}
-      ${secAcc('int-trans','📄','Transcripts','Full transcripts of each interview session.',transcriptsBody)}
-      ${secAcc('int-analysis','📊','Analysis','Interview analysis and key insights from each researcher.',analysisBody)}
+      ${secAcc('int-audio',`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v4M8 23h8"/></svg>`,'Audio Recordings','Raw interview recordings from all 21 sessions.',audioBody,true)}
+      ${secAcc('int-trans',`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>`,'Transcripts','Full transcripts of each interview session.',transcriptsBody)}
+      ${secAcc('int-analysis',`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>`,'Analysis','Interview analysis and key insights from each researcher.',analysisBody)}
     </div>`;
 }
 
@@ -643,7 +643,7 @@ function buildPersonas(){
       <p>We gave faces to the data. From 21 interviews, we built personas that represent real teenage experiences.</p>
     </div>
     <div class="page-body">
-      ${secAcc('per-individual','👤','Individual Personas','Persona documents built from each team member\'s interviews.',body,true)}
+      ${secAcc('per-individual',`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`,'Individual Personas','Persona documents built from each team member\'s interviews.',body,true)}
     </div>`;
 }
 
@@ -656,8 +656,8 @@ function buildJourneyMaps(){
       <p>We mapped emotional arcs through entire days. Where the system fails teenagers isn't always obvious.</p>
     </div>
     <div class="page-body">
-      ${secAcc('jm-empathy','❤️','Empathy Maps','What each persona says, thinks, does, and feels.',body,true)}
-      ${secAcc('jm-journey','🗺️','Journey Maps','Step-by-step emotional journey maps for each persona.',
+      ${secAcc('jm-empathy',`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>`,'Empathy Maps','What each persona says, thinks, does, and feels.',body,true)}
+      ${secAcc('jm-journey',`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4zM8 2v16M16 6v16"/></svg>`,'Journey Maps','Step-by-step emotional journey maps for each persona.',
         PEOPLE.map(p=>personAcc('jmap',p,buildDriveBox('jmap-'+p.key))).join(''))}
     </div>`;
 }
@@ -670,9 +670,9 @@ function buildSurveys(){
       <p>30+ responses with proper consent and clinical batteries. The data validated what we heard in interviews.</p>
     </div>
     <div class="page-body">
-      ${secAcc('sv-form','📋','Survey Form','The formal survey instrument with consent documentation.',
+      ${secAcc('sv-form',`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="2"/></svg>`,'Survey Form','The formal survey instrument with consent documentation.',
         buildFileViewer([{name:'SurveyForm_DT.pdf',label:'Survey Form',url:BASE+'SurveyForm_DT.pdf'}]),true)}
-      ${secAcc('sv-resp','🗄️','Response Data','Raw response data from 30+ participants.',
+      ${secAcc('sv-resp',`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>`,'Response Data','Raw response data from 30+ participants.',
         buildFileViewer([{name:'DT_SurveyForm (Responses).xlsx',label:'Survey Responses',url:BASE+'DT_SurveyForm (Responses).xlsx'}]))}
     </div>`;
 }
@@ -685,11 +685,11 @@ function buildIdeation(){
       <p>1,470 ideas in a single session. Structured chaos is how breakthroughs happen.</p>
     </div>
     <div class="page-body">
-      ${secAcc('id-brain','✏️','Brainwriting & Ideation','Raw brainwriting output from our 1,470-idea session.',
+      ${secAcc('id-brain',`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="11" cy="11" r="2"/></svg>`,'Brainwriting & Ideation','Raw brainwriting output from our 1,470-idea session.',
         buildFileViewer([{name:'DT_Ideation.pdf',label:'Ideation Document',url:BASE+'DT_Ideation.pdf'}]),true)}
-      ${secAcc('id-scored','⭐','Scored Ideas','All ideas scored by viability, desirability, and feasibility.',
+      ${secAcc('id-scored',`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,'Scored Ideas','All ideas scored by viability, desirability, and feasibility.',
         buildFileViewer([{name:'DT_ScoredIdeas.xlsx',label:'Scored Ideas',url:BASE+'DT_ScoredIdeas.xlsx'}]))}
-      ${secAcc('id-matrix','🔲','Viability–Effort Matrix','Top ideas plotted to find quick-win candidates.',
+      ${secAcc('id-matrix',`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>`,'Viability–Effort Matrix','Top ideas plotted to find quick-win candidates.',
         buildFileViewer([{name:'Viability-Effort.jpeg',label:'Viability–Effort Matrix',url:BASE+'Viability-Effort.jpeg'}]))}
     </div>`;
 }
@@ -701,18 +701,18 @@ function buildResources(){
       <p>All research artifacts in one place. Click any file to view it directly.</p>
     </div>
     <div class="page-body">
-      ${secAcc('res-survey','📋','Survey Materials','Survey form and response data.',
+      ${secAcc('res-survey',`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="2"/></svg>`,'Survey Materials','Survey form and response data.',
         buildFileViewer([
           {name:'SurveyForm_DT.pdf',label:'Survey Form',url:BASE+'SurveyForm_DT.pdf'},
           {name:'DT_SurveyForm (Responses).xlsx',label:'Survey Responses',url:BASE+'DT_SurveyForm (Responses).xlsx'},
         ]),true)}
-      ${secAcc('res-ideation','💡','Ideation Materials','Brainwriting, scored ideas, and viability matrix.',
+      ${secAcc('res-ideation',`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="11" cy="11" r="2"/></svg>`,'Ideation Materials','Brainwriting, scored ideas, and viability matrix.',
         buildFileViewer([
           {name:'DT_Ideation.pdf',label:'Ideation Document',url:BASE+'DT_Ideation.pdf'},
           {name:'DT_ScoredIdeas.xlsx',label:'Scored Ideas',url:BASE+'DT_ScoredIdeas.xlsx'},
           {name:'Viability-Effort.jpeg',label:'Viability–Effort Matrix',url:BASE+'Viability-Effort.jpeg'},
         ]))}
-      ${secAcc('res-harshith','👤','Harshith\'s Files','All files from Chegondi Harshith (SE24UARI007).',
+      ${secAcc('res-harshith',`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`,'Harshith\'s Files','All files from Chegondi Harshith (SE24UARI007).',
         buildFileViewer([
           {name:'Interview1_007.mp4',label:'Interview 1',url:BASE_007+'Interview1_007.mp4'},
           {name:'Interview2_007.mp4',label:'Interview 2',url:BASE_007+'Interview2_007.mp4'},
