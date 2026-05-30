@@ -20,6 +20,7 @@ nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-f
 .nav-links{display:flex;align-items:center;gap:.25rem}
 .nav-btn{padding:.35rem .85rem;border-radius:9999px;font-size:.875rem;font-weight:500;color:#6b7280;transition:all .15s}
 .nav-btn:hover{background:#f3f4f6;color:#111827}
+.nav-btn.active-section{background:#eff6ff;color:#2563eb;font-weight:600}
 .dropdown{position:relative}
 .dd-menu{display:none;position:absolute;right:0;top:calc(100% + 8px);width:220px;background:#fff;border:1px solid #e5e7eb;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,.12);overflow:hidden;z-index:100}
 .dd-menu.open{display:block}
@@ -222,11 +223,11 @@ footer{border-top:1px solid #e5e7eb;background:#f9fafb;padding:1.5rem 2rem}
       <span>Prototype Squad</span>
     </button>
     <div class="nav-links">
-      <button class="nav-btn" onclick="goSection('journey')">Journey</button>
-      <button class="nav-btn" onclick="goSection('belong')">Belong</button>
-      <button class="nav-btn" onclick="goSection('data')">The Data</button>
-      <button class="nav-btn" onclick="goSection('learnings')">Learnings</button>
-      <button class="nav-btn" onclick="goSection('team')">Team</button>
+      <button class="nav-btn" onclick="goSection('journey')" data-section="journey">Journey</button>
+      <button class="nav-btn" onclick="goSection('belong')" data-section="belong">Belong</button>
+      <button class="nav-btn" onclick="goSection('data')" data-section="data">The Data</button>
+      <button class="nav-btn" onclick="goSection('learnings')" data-section="learnings">Learnings</button>
+      <button class="nav-btn" onclick="goSection('team')" data-section="team">Team</button>
       <div class="dropdown" id="files-dd">
         <button class="nav-btn" onclick="toggleDD()" style="display:flex;align-items:center;gap:.35rem">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg> Files
@@ -237,6 +238,7 @@ footer{border-top:1px solid #e5e7eb;background:#f9fafb;padding:1.5rem 2rem}
           <button class="dd-item" onclick="showPage('interviews');closeDD()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v4M8 23h8"/></svg> Interviews</button>
           <button class="dd-item" onclick="showPage('personas');closeDD()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Personas</button>
           <button class="dd-item" onclick="showPage('journey-maps');closeDD()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4zM8 2v16M16 6v16"/></svg> Journey Maps</button>
+          <button class="dd-item" onclick="showPage('root-cause');closeDD()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4zM8 2v16M16 6v16"/></svg> Root Cause Map</button>
           <button class="dd-item" onclick="showPage('surveys');closeDD()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="2"/></svg> Surveys</button>
           <button class="dd-item" onclick="showPage('ideation');closeDD()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 017 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 01-2 2H10a2 2 0 01-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 017-7z"/></svg> Ideation</button>
           <button class="dd-item" onclick="showPage('resources');closeDD()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg> Resources</button>
@@ -272,8 +274,8 @@ footer{border-top:1px solid #e5e7eb;background:#f9fafb;padding:1.5rem 2rem}
       <h1 class="hero-title">How seven students tried to fix <span>teenage loneliness</span>.</h1>
       <p class="hero-sub">A semester-long design thinking journey by Prototype Squad.</p>
       <div class="hero-btns">
-        <button class="btn btn-primary" onclick="goSection('journey')">See our journey →</button>
-        <a class="btn btn-outline" href="https://vertical-file-hub--koushikvakadani.replit.app" target="_blank">Try Belong</a>
+        <button class="btn btn-primary" onclick="goSection('journey')" data-section="journey">See our journey →</button>
+        <a class="btn btn-outline" href="https://vertical-file-hub--koushikvakadani.replit.app" target="_blank">Try MindBloom</a>
       </div>
       <div class="stat-cards">
         <div class="stat-card"><div class="stat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div><div class="stat-label">7 Team members</div></div>
@@ -290,7 +292,7 @@ footer{border-top:1px solid #e5e7eb;background:#f9fafb;padding:1.5rem 2rem}
       <div class="sec-hdr">
         <span class="sec-lbl">The Process</span>
         <h2 class="sec-title">Our <span>Journey</span></h2>
-        <p class="sec-sub">Ten phases from assumptions to answers. Click any phase to expand and upload files.</p>
+        <p class="sec-sub">Ten phases from assumptions to answers. Click any phase to expand.</p>
       </div>
       <div class="timeline" id="timeline-container"></div>
     </div>
@@ -300,7 +302,7 @@ footer{border-top:1px solid #e5e7eb;background:#f9fafb;padding:1.5rem 2rem}
     <div class="cmd">
       <div class="sec-hdr">
         <span class="sec-lbl">The Solution</span>
-        <h2 class="sec-title">Meet <span>Belong</span>.</h2>
+        <h2 class="sec-title">Meet <span>MindBloom</span>.</h2>
         <p class="sec-sub">The app we built because the data told us to. For teenagers who feel disconnected.</p>
       </div>
       <div class="features-grid">
@@ -314,7 +316,7 @@ footer{border-top:1px solid #e5e7eb;background:#f9fafb;padding:1.5rem 2rem}
         <div>
           <h3>Try Belong now</h3>
           <p>Our prototype is live. Open it on your phone or desktop and experience what we built for teenagers who feel disconnected.</p>
-          <a class="btn btn-primary" href="https://vertical-file-hub--koushikvakadani.replit.app" target="_blank">Open Belong →</a>
+          <a class="btn btn-primary" href="https://vertical-file-hub--koushikvakadani.replit.app" target="_blank">Open MindBloom →</a>
         </div>
         <div style="text-align:center">
           <div class="qr-box"><img src="qr.png" alt="QR Code"/></div>
@@ -388,6 +390,7 @@ footer{border-top:1px solid #e5e7eb;background:#f9fafb;padding:1.5rem 2rem}
 <div class="page" id="page-journey-maps"></div>
 <div class="page" id="page-surveys"></div>
 <div class="page" id="page-ideation"></div>
+<div class="page" id="page-root-cause"></div>
 <div class="page" id="page-resources"></div>
 
 <footer>
@@ -403,13 +406,13 @@ const BASE = 'https://harshithcheg.github.io/PrototypeSquad/files/';
 const BASE_007 = BASE + 'se24uari007/';
 
 const TEAM = [
-  {name:"Vakadani Koushik",roll:"SE24UARI069",initials:"VK",desc:"Research Lead & co-designer of the Belong app experience.",color:"#1d4ed8"},
+  {name:"Vakadani Koushik",roll:"SE24UARI069",initials:"VK",desc:"Research Lead & co-designer of the MindBloom app experience.",color:"#1d4ed8"},
   {name:"Katkuri Saathvik",roll:"SE24UARI186",initials:"KS",desc:"Led ideation and synthesis across all 10 problem statements.",color:"#2563eb"},
   {name:"Pati Gowri Karthikeya",roll:"SE24UARI185",initials:"PGK",desc:"Handled data analysis and root cause mapping for the team.",color:"#4338ca"},
   {name:"Chegondi Harshith",roll:"SE24UARI007",initials:"CH",desc:"Built journey maps and empathy frameworks for all personas.",color:"#0284c7"},
   {name:"Katta Joshita Sai",roll:"SE24UARI067",initials:"KJS",desc:"Designed and executed the survey instrument and consent workflow.",color:"#3b82f6"},
   {name:"Duggi Gnana Sloka",roll:"SE24UARI162",initials:"DGS",desc:"Crafted the persona documents and empathy research artifacts.",color:"#155e75"},
-  {name:"Kunapareddy Mounish",roll:"SE24UMCS097",initials:"KM",desc:"Developed and refined the final Belong concept and presentation.",color:"#3730a3"},
+  {name:"Kunapareddy Mounish",roll:"SE24UMCS097",initials:"KM",desc:"Developed and refined the final MindBloom concept and presentation.",color:"#3730a3"},
 ];
 
 const PHASES = [
@@ -421,8 +424,8 @@ const PHASES = [
   {n:6,title:"Finding the root",body:"We built a root-cause analysis map going 5 levels deep from the central problem. This gave us 34 problem-framing questions, from which we selected the top 10 to take forward.",section:"phase-6"},
   {n:7,title:"1,470 ideas in one session",body:"Using a modified brainwriting method — 7 members, 3 ideas, 5-minute rounds — we generated 1,470 raw ideas across 10 problem statements. Every single idea was scored for viability, desirability, and feasibility.",section:"phase-7"},
   {n:8,title:"Plotting the best ideas",body:"We took the top 20 ideas across each scoring dimension and plotted them on a Viability vs Effort matrix to find what sat in the quick-win quadrant.",section:"phase-8"},
-  {n:9,title:"Three concepts, one direction",body:"We developed three concepts: Belong (teen wellbeing app), The Disconnect Club (phone-free school club), and PressPause (school stress dashboard). We chose to build Belong.",section:"phase-9"},
-  {n:10,title:"Building Belong",body:"Belong is a mobile app for teenagers feeling disconnected. Morning mood check-in, peer circles, senior mentor tips, daily micro-challenges, and a warm counsellor bridge if you need one.",section:"phase-10"},
+  {n:9,title:"Three concepts, one direction",body:"We developed three concepts: MindBloom (teen wellbeing app), The Disconnect Club (phone-free school club), and PressPause (school stress dashboard). We chose to build MindBloom.",section:"phase-9"},
+  {n:10,title:"Building MindBloom",body:"MindBloom is a mobile app for teenagers feeling disconnected. Morning mood check-in, peer circles, senior mentor tips, daily micro-challenges, and a warm counsellor bridge if you need one.",section:"phase-10"},
 ];
 
 // ── People for per-person sections ────────────────────────────────────────
@@ -694,39 +697,83 @@ function buildIdeation(){
     </div>`;
 }
 
+function buildRootCause(){
+  document.getElementById('page-root-cause').innerHTML = `
+    <div class="page-hdr">
+      <span class="page-tag">Phase 6</span>
+      <h1>Root Cause Analysis</h1>
+      <p>We built a root-cause map going 5 levels deep from the central problem — loneliness and depression in teenagers.</p>
+    </div>
+    <div class="page-body">
+      ${secAcc('rc-map',`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4zM8 2v16M16 6v16"/></svg>`,'Root Cause Map','5-level root cause analysis connecting loneliness to systemic failures.',
+        buildFileViewer([{name:'RootCauseMap.pdf',label:'Root Cause Map',url:BASE+'RootCauseMap.pdf'}]),true)}
+    </div>`;
+}
+
 function buildResources(){
+  const linkCard = (icon, title, desc, page) => `
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;background:#fff;border:1px solid #e5e7eb;border-radius:14px;margin-bottom:.75rem;gap:1rem;flex-wrap:wrap;transition:all .2s"
+         onmouseover="this.style.borderColor='#93c5fd';this.style.background='#f0f7ff'"
+         onmouseout="this.style.borderColor='#e5e7eb';this.style.background='#fff'">
+      <div style="display:flex;align-items:center;gap:1rem">
+        <div style="width:40px;height:40px;border-radius:50%;background:#eff6ff;display:flex;align-items:center;justify-content:center;color:#2563eb;flex-shrink:0">${icon}</div>
+        <div>
+          <div style="font-weight:700;font-size:.95rem">${title}</div>
+          <div style="font-size:.8rem;color:#6b7280;margin-top:.1rem">${desc}</div>
+        </div>
+      </div>
+      <button onclick="showPage('${page}')"
+        style="display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1.1rem;background:#2563eb;color:#fff;border-radius:9999px;font-size:.82rem;font-weight:600;cursor:pointer;border:none;font-family:inherit;white-space:nowrap">
+        View Files →
+      </button>
+    </div>`;
+
+  const micSvg = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v4M8 23h8"/></svg>`;
+  const userSvg = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`;
+  const mapSvg = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4zM8 2v16M16 6v16"/></svg>`;
+  const clipSvg = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="2"/></svg>`;
+  const penSvg = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="11" cy="11" r="2"/></svg>`;
+
   document.getElementById('page-resources').innerHTML = `
     <div class="page-hdr">
       <h1>Resources & Downloads</h1>
-      <p>All research artifacts in one place. Click any file to view it directly.</p>
+      <p>All research artifacts organised by section. Click any card to go directly to the files.</p>
     </div>
     <div class="page-body">
-      ${secAcc('res-survey',`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="2"/></svg>`,'Survey Materials','Survey form and response data.',
-        buildFileViewer([
-          {name:'SurveyForm_DT.pdf',label:'Survey Form',url:BASE+'SurveyForm_DT.pdf'},
-          {name:'DT_SurveyForm (Responses).xlsx',label:'Survey Responses',url:BASE+'DT_SurveyForm (Responses).xlsx'},
-        ]),true)}
-      ${secAcc('res-ideation',`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="11" cy="11" r="2"/></svg>`,'Ideation Materials','Brainwriting, scored ideas, and viability matrix.',
-        buildFileViewer([
-          {name:'DT_Ideation.pdf',label:'Ideation Document',url:BASE+'DT_Ideation.pdf'},
-          {name:'DT_ScoredIdeas.xlsx',label:'Scored Ideas',url:BASE+'DT_ScoredIdeas.xlsx'},
-          {name:'Viability-Effort.jpeg',label:'Viability–Effort Matrix',url:BASE+'Viability-Effort.jpeg'},
-        ]))}
-      ${secAcc('res-harshith',`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`,'Harshith\'s Files','All files from Chegondi Harshith (SE24UARI007).',
-        buildFileViewer([
-          {name:'Interview1_007.mp4',label:'Interview 1',url:BASE_007+'Interview1_007.mp4'},
-          {name:'Interview2_007.mp4',label:'Interview 2',url:BASE_007+'Interview2_007.mp4'},
-          {name:'Interview3_007.mp4',label:'Interview 3',url:BASE_007+'Interview3_007.mp4'},
-          {name:'Transcript_007.pdf',label:'Transcript',url:BASE_007+'Transcript_007.pdf'},
-          {name:'Analysis_007.pdf',label:'Interview Analysis',url:BASE_007+'Analysis_007.pdf'},
-          {name:'Personas_007.pdf',label:'Personas',url:BASE_007+'Personas_007.pdf'},
-        ]))}
+      ${linkCard(`<svg width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4zM8 2v16M16 6v16'/></svg>`, 'Root Cause Map', 'The 5-level root cause analysis map from Phase 6.', 'root-cause')}
+      ${linkCard(micSvg, 'Interviews', 'Audio recordings, transcripts and analysis from all 21 interviews.', 'interviews')}
+      ${linkCard(userSvg, 'Personas', 'Individual persona documents from each team member.', 'personas')}
+      ${linkCard(mapSvg, 'Journey Maps', 'Empathy maps and journey maps for each persona.', 'journey-maps')}
+      ${linkCard(clipSvg, 'Surveys', 'Survey form, consent document, and 30+ response data.', 'surveys')}
+      ${linkCard(penSvg, 'Ideation', 'Brainwriting sheets, scored ideas, and viability matrix.', 'ideation')}
     </div>`;
 }
 
 // ── Timeline ──────────────────────────────────────────────────────────────
+const PHASE_LINKS = {
+  2:{page:'interviews',label:'View Interviews →'},
+  3:{page:'personas',label:'View Personas →'},
+  4:{page:'journey-maps',label:'View Journey Maps →'},
+  5:{page:'surveys',label:'View Surveys →'},
+  6:{page:'root-cause',label:'View Root Cause Map →'},
+  7:{page:'ideation',label:'View Ideation →'},
+  8:{page:'ideation',label:'View Ideation →'},
+  9:{page:'ideation',label:'View Ideation →'},
+  10:{page:'interviews',label:'Try MindBloom →'},
+};
+
 function buildTimeline(){
-  document.getElementById('timeline-container').innerHTML = PHASES.map(p=>`
+  document.getElementById('timeline-container').innerHTML = PHASES.map(p=>{
+    const link = PHASE_LINKS[p.n];
+    const footer = link
+      ? `<div style="border-top:1px solid #d1dff8;padding-top:1rem;margin-top:.75rem">
+           <button onclick="showPage('${link.page.replace(/'/g,"\'")}');event.stopPropagation()"
+             style="display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1.1rem;background:#2563eb;color:#fff;border-radius:9999px;font-size:.82rem;font-weight:600;cursor:pointer;border:none;font-family:inherit">
+             ${link.label}
+           </button>
+         </div>`
+      : '';
+    return `
     <div class="phase">
       <div class="phase-num">${p.n}</div>
       <button class="phase-hdr" onclick="togglePhase(${p.n})">
@@ -739,12 +786,11 @@ function buildTimeline(){
       <div class="phase-body" id="pb${p.n}">
         <div class="phase-inner">
           <p>${p.body}</p>
-          <div style="border-top:1px solid #d1dff8;padding-top:1rem;margin-top:.5rem">
-            ${buildDriveBox(p.section)}
-          </div>
+          ${footer}
         </div>
       </div>
-    </div>`).join('');
+    </div>`;
+  }).join('');
 }
 function togglePhase(n){
   const b=document.getElementById('pb'+n),c=document.getElementById('pchev'+n);
@@ -764,6 +810,7 @@ function buildTeam(){
 
 // ── Navigation ────────────────────────────────────────────────────────────
 const pageBuilders = {
+  'root-cause': buildRootCause,
   interviews: buildInterviews,
   personas: buildPersonas,
   'journey-maps': buildJourneyMaps,
@@ -818,9 +865,25 @@ const obs = new IntersectionObserver(entries=>{
 },{threshold:0.5});
 document.querySelectorAll('[data-count]').forEach(el=>obs.observe(el));
 
+// ── Active nav on scroll ─────────────────────────────────────────────────
+const NAV_SECTIONS = ['journey','belong','data','learnings','team'];
+const scrollObs = new IntersectionObserver(entries=>{
+  if(!document.getElementById('page-home').classList.contains('active'))return;
+  entries.forEach(e=>{
+    if(!e.isIntersecting)return;
+    document.querySelectorAll('.nav-btn[data-section]').forEach(b=>{
+      b.classList.toggle('active-section', b.dataset.section===e.target.id);
+    });
+  });
+},{threshold:0.4, rootMargin:'-64px 0px -40% 0px'});
+
 // ── Init ──────────────────────────────────────────────────────────────────
 buildTimeline();
 buildTeam();
+NAV_SECTIONS.forEach(id=>{
+  const el=document.getElementById(id);
+  if(el)scrollObs.observe(el);
+});
 </script>
 </body>
 </html>
