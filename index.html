@@ -224,7 +224,7 @@ footer{border-top:1px solid #e5e7eb;background:#f9fafb;padding:1.5rem 2rem}
     </button>
     <div class="nav-links">
       <button class="nav-btn" onclick="goSection('journey')" data-section="journey">Journey</button>
-      <button class="nav-btn" onclick="goSection('belong')" data-section="belong">Belong</button>
+      <button class="nav-btn" onclick="goSection('belong')" data-section="belong">MindBloom</button>
       <button class="nav-btn" onclick="goSection('data')" data-section="data">The Data</button>
       <button class="nav-btn" onclick="goSection('learnings')" data-section="learnings">Learnings</button>
       <button class="nav-btn" onclick="goSection('team')" data-section="team">Team</button>
@@ -250,7 +250,7 @@ footer{border-top:1px solid #e5e7eb;background:#f9fafb;padding:1.5rem 2rem}
   <div class="mob-menu" id="mob-menu">
     <span class="mob-label">Sections</span>
     <button class="mob-link" onclick="goSection('journey');closeMob()">Journey</button>
-    <button class="mob-link" onclick="goSection('belong');closeMob()">Belong</button>
+    <button class="mob-link" onclick="goSection('belong');closeMob()">MindBloom</button>
     <button class="mob-link" onclick="goSection('data');closeMob()">The Data</button>
     <button class="mob-link" onclick="goSection('learnings');closeMob()">Learnings</button>
     <button class="mob-link" onclick="goSection('team');closeMob()">Team</button>
@@ -314,7 +314,7 @@ footer{border-top:1px solid #e5e7eb;background:#f9fafb;padding:1.5rem 2rem}
       </div>
       <div class="belong-cta">
         <div>
-          <h3>Try Belong now</h3>
+          <h3>Try MindBloom now</h3>
           <p>Our prototype is live. Open it on your phone or desktop and experience what we built for teenagers who feel disconnected.</p>
           <a class="btn btn-primary" href="https://vertical-file-hub--koushikvakadani.replit.app" target="_blank">Open MindBloom →</a>
         </div>
@@ -601,7 +601,7 @@ function buildInterviews(){
   const transcriptsBody = PEOPLE.map(p=>{
     if(p.key==='harshith'){
       return personAcc('transcripts', p, buildFileViewer([
-        {name:'Transcripts_007.pdf', label:'Transcripts', url: BASE_007+'Transcripts_007.pdf'},
+        {name:'Transcript_007.pdf', label:'Transcript', url: BASE_007+'Transcript_007.pdf'},
       ]));
     }
     return personAcc('transcripts', p, buildDriveBox('transcripts-'+p.key));
@@ -866,24 +866,25 @@ const obs = new IntersectionObserver(entries=>{
 document.querySelectorAll('[data-count]').forEach(el=>obs.observe(el));
 
 // ── Active nav on scroll ─────────────────────────────────────────────────
-const NAV_SECTIONS = ['journey','belong','data','learnings','team'];
-const scrollObs = new IntersectionObserver(entries=>{
+function updateActiveNav(){
   if(!document.getElementById('page-home').classList.contains('active'))return;
-  entries.forEach(e=>{
-    if(!e.isIntersecting)return;
-    document.querySelectorAll('.nav-btn[data-section]').forEach(b=>{
-      b.classList.toggle('active-section', b.dataset.section===e.target.id);
-    });
+  const sections=['journey','belong','data','learnings','team'];
+  const offset=80;
+  let current='';
+  sections.forEach(id=>{
+    const el=document.getElementById(id);
+    if(el && el.getBoundingClientRect().top<=offset) current=id;
   });
-},{threshold:0.4, rootMargin:'-64px 0px -40% 0px'});
+  document.querySelectorAll('.nav-btn[data-section]').forEach(b=>{
+    b.classList.toggle('active-section', b.dataset.section===current);
+  });
+}
+window.addEventListener('scroll', updateActiveNav, {passive:true});
 
 // ── Init ──────────────────────────────────────────────────────────────────
 buildTimeline();
 buildTeam();
-NAV_SECTIONS.forEach(id=>{
-  const el=document.getElementById(id);
-  if(el)scrollObs.observe(el);
-});
+updateActiveNav();
 </script>
 </body>
 </html>
