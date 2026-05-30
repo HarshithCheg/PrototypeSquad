@@ -601,7 +601,7 @@ function buildInterviews(){
   const transcriptsBody = PEOPLE.map(p=>{
     if(p.key==='harshith'){
       return personAcc('transcripts', p, buildFileViewer([
-        {name:'Transcripts_007.pdf', label:'Transcript', url: BASE_007+'Transcripts_007.pdf'},
+        {name:'Transcript_007.pdf', label:'Transcript', url: BASE_007+'Transcript_007.pdf'},
       ]));
     }
     return personAcc('transcripts', p, buildDriveBox('transcripts-'+p.key));
@@ -651,17 +651,15 @@ function buildPersonas(){
 }
 
 function buildJourneyMaps(){
-  const body = PEOPLE.map(p => personAcc('journey', p, buildDriveBox('journey-'+p.key))).join('');
+  const mapSvg = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4zM8 2v16M16 6v16"/></svg>`;
   document.getElementById('page-journey-maps').innerHTML = `
     <div class="page-hdr">
       <span class="page-tag">Phase 4</span>
-      <h1>Journey Maps</h1>
+      <h1>Journey / Empathy Map</h1>
       <p>We mapped emotional arcs through entire days. Where the system fails teenagers isn't always obvious.</p>
     </div>
     <div class="page-body">
-      ${secAcc('jm-empathy',`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>`,'Empathy Maps','What each persona says, thinks, does, and feels.',body,true)}
-      ${secAcc('jm-journey',`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4zM8 2v16M16 6v16"/></svg>`,'Journey Maps','Step-by-step emotional journey maps for each persona.',
-        PEOPLE.map(p=>personAcc('jmap',p,buildDriveBox('jmap-'+p.key))).join(''))}
+      ${secAcc('jm-main', mapSvg, 'Journey / Empathy Map', 'Step-by-step emotional journey and empathy maps for each persona.', buildDriveBox('journey-main'), true)}
     </div>`;
 }
 
