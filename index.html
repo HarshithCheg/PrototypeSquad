@@ -54,8 +54,8 @@ nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-f
 .btn-primary:hover{background:#1d4ed8;transform:translateY(-1px)}
 .btn-outline{background:#fff;color:#111827;border:1.5px solid #e5e7eb}
 .btn-outline:hover{background:#f3f4f6;transform:translateY(-1px)}
-.stat-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;width:100%;max-width:880px}
-@media(max-width:768px){.stat-cards{grid-template-columns:repeat(2,1fr)}}
+.stat-cards{display:flex;flex-wrap:wrap;gap:1rem;width:100%;max-width:950px;justify-content:center}
+
 .stat-card{display:flex;flex-direction:column;align-items:center;padding:1.25rem 1rem;background:#fff;border:1px solid #e5e7eb;border-radius:16px;box-shadow:0 1px 6px rgba(0,0,0,.04)}
 .stat-icon{width:44px;height:44px;border-radius:50%;background:#eff6ff;display:flex;align-items:center;justify-content:center;margin-bottom:.75rem;font-size:1.4rem}
 .stat-label{font-size:.8rem;font-weight:600;text-align:center}
@@ -364,7 +364,7 @@ footer{border-top:1px solid #e5e7eb;background:#f9fafb;padding:1.5rem 2rem}
         <button class="btn btn-primary" onclick="goSection('journey')" data-section="journey">See our journey →</button>
         <a class="btn btn-outline" href="https://vertical-file-hub--koushikvakadani.replit.app" target="_blank">Try MindBloom</a>
       </div>
-      <div class="stat-cards">
+      <div class="stat-cards" style="justify-content:center">
         <div class="stat-card"><div class="stat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div><div class="stat-label">7 Team members</div></div>
         <div class="stat-card"><div class="stat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v4M8 23h8"/></svg></div><div class="stat-label">20+ Interviews</div></div>
         <div class="stat-card"><div class="stat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="2"/></svg></div><div class="stat-label">35+ Survey responses</div></div>
