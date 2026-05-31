@@ -627,7 +627,7 @@ function buildInterviews(){
       {name:'Transcript_069.pdf', label:'Transcript', url: BASE_069+'Transcript_069.pdf'},
     ]));
     if(p.key==='saathvik') return personAcc('transcripts', p, 
-      buildFileViewer([{name:'Transcript_186.docx', label:'Transcript & Analysis', url: BASE_186+'Transcript_186.docx'}]) +
+      buildFileViewer([{name:'Transcript_186.pdf', label:'Transcript & Analysis', url: BASE_186+'Transcript_186.pdf'}]) +
       '<div style="margin-top:.5rem;padding:.6rem 1rem;background:#eff6ff;border-left:3px solid #2563eb;border-radius:0 8px 8px 0;font-size:.82rem;color:#2563eb">📌 Analysis is included within this transcript document</div>'
     );
     if(p.key==='karthikeya') return personAcc('transcripts', p, buildFileViewer([
@@ -645,9 +645,9 @@ function buildInterviews(){
       {name:'Analysis_069.txt', label:'Analysis Notes', url: BASE_069+'Analysis_069.txt'},
     ]));
     if(p.key==='saathvik') return personAcc('analysis', p,
-      '<div style="padding:.75rem 1rem;background:#eff6ff;border-left:3px solid #2563eb;border-radius:0 8px 8px 0;font-size:.82rem;color:#2563eb">📌 Analysis is included in Transcript_186.docx under Transcripts</div>'
+      '<div style="padding:.75rem 1rem;background:#eff6ff;border-left:3px solid #2563eb;border-radius:0 8px 8px 0;font-size:.82rem;color:#2563eb">📌 Analysis is included in Transcript_186.pdf under Transcripts</div>'
     );
-    if(p.key==='karthikeya') return personAcc('analysis', p, buildFileViewer([{name:'Analysis_185.docx', label:'Interview Analysis', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari185/Analysis_185.docx'}]));
+    if(p.key==='karthikeya') return personAcc('analysis', p, buildFileViewer([{name:'Analysis_185.pdf', label:'Interview Analysis', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari185/Analysis_185.pdf'}]));
     return personAcc('analysis', p, `<div style="padding:1rem;background:#f9fafb;border-radius:10px;color:#9ca3af;font-size:.85rem;text-align:center">Files coming soon</div>`);
   }).join('');
 
