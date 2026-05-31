@@ -588,51 +588,67 @@ function togglePerson(id){
 // ── Page builders ─────────────────────────────────────────────────────────
 function buildInterviews(){
   const BASE_069 = 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari069/';
+  const BASE_186 = 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari186/';
 
   const audioBody = PEOPLE.map(p=>{
-    if(p.key==='harshith'){
-      return personAcc('audio', p, buildFileViewer([
-        {name:'Interview1_007.mp4', label:'Interview 1', url: BASE_007+'Interview1_007.mp4'},
-        {name:'Interview2_007.mp4', label:'Interview 2', url: BASE_007+'Interview2_007.mp4'},
-        {name:'Interview3_007.mp4', label:'Interview 3', url: BASE_007+'Interview3_007.mp4'},
-      ]));
-    }
-    if(p.key==='koushik'){
-      return personAcc('audio', p, buildFileViewer([
-        {name:'Interview1_069.m4a', label:'Interview 1', url: BASE_069+'Interview1_069.m4a'},
-        {name:'Interview2_069.m4a', label:'Interview 2', url: BASE_069+'Interview2_069.m4a'},
-      ]));
-    }
-    return personAcc('audio', p, buildDriveBox('audio-'+p.key));
+    if(p.key==='harshith') return personAcc('audio', p, buildFileViewer([
+      {name:'Interview1_007.mp4', label:'Interview 1', url: BASE_007+'Interview1_007.mp4'},
+      {name:'Interview2_007.mp4', label:'Interview 2', url: BASE_007+'Interview2_007.mp4'},
+      {name:'Interview3_007.mp4', label:'Interview 3', url: BASE_007+'Interview3_007.mp4'},
+    ]));
+    if(p.key==='koushik') return personAcc('audio', p, buildFileViewer([
+      {name:'Interview1_069.m4a', label:'Interview 1', url: BASE_069+'Interview1_069.m4a'},
+      {name:'Interview2_069.m4a', label:'Interview 2', url: BASE_069+'Interview2_069.m4a'},
+      {name:'Interview3_069.m4a', label:'Interview 3', url: BASE_069+'Interview3_069.m4a'},
+    ]));
+    if(p.key==='saathvik') return personAcc('audio', p, buildFileViewer([
+      {name:'Interview1_186.mp3', label:'Interview 1', url: BASE_186+'Interview1_186.mp3'},
+      {name:'Interview2_186.mp3', label:'Interview 2', url: BASE_186+'Interview2_186.mp3'},
+      {name:'Interview3_186.mp3', label:'Interview 3', url: BASE_186+'Interview3_186.mp3'},
+    ]));
+    if(p.key==='karthikeya') return personAcc('audio', p, buildFileViewer([
+      {name:'Interview1_185.mp4', label:'Interview 1', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari185/Interview1_185.mp4'},
+      {name:'Interview2_185.mp4', label:'Interview 2', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari185/Interview2_185.mp4'},
+      {name:'Interview3_185.mp4', label:'Interview 3', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari185/Interview3_185.mp4'},
+    ]));
+    if(p.key==='karthikeya') return personAcc('audio', p, buildFileViewer([
+      {name:'Interview1_185.mp4', label:'Interview 1', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari185/Interview1_185.mp4'},
+      {name:'Interview2_185.mp4', label:'Interview 2', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari185/Interview2_185.mp4'},
+      {name:'Interview3_185.mp4', label:'Interview 3', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari185/Interview3_185.mp4'},
+    ]));
+    return personAcc('audio', p, `<div style="padding:1rem;background:#f9fafb;border-radius:10px;color:#9ca3af;font-size:.85rem;text-align:center">Files coming soon</div>`);
   }).join('');
 
   const transcriptsBody = PEOPLE.map(p=>{
-    if(p.key==='harshith'){
-      return personAcc('transcripts', p, buildFileViewer([
-        {name:'Transcript_007.pdf', label:'Transcript', url: BASE_007+'Transcript_007.pdf'},
-      ]));
-    }
-    if(p.key==='koushik'){
-      return personAcc('transcripts', p, buildFileViewer([
-        {name:'Transcript_069.pdf', label:'Transcript', url: BASE_069+'Transcript_069.pdf'},
-      ]));
-    }
-    return personAcc('transcripts', p, buildDriveBox('transcripts-'+p.key));
+    if(p.key==='harshith') return personAcc('transcripts', p, buildFileViewer([
+      {name:'Transcript_007.pdf', label:'Transcript', url: BASE_007+'Transcript_007.pdf'},
+    ]));
+    if(p.key==='koushik') return personAcc('transcripts', p, buildFileViewer([
+      {name:'Transcript_069.pdf', label:'Transcript', url: BASE_069+'Transcript_069.pdf'},
+    ]));
+    if(p.key==='saathvik') return personAcc('transcripts', p, 
+      buildFileViewer([{name:'Transcript_186.docx', label:'Transcript & Analysis', url: BASE_186+'Transcript_186.docx'}]) +
+      '<div style="margin-top:.5rem;padding:.6rem 1rem;background:#eff6ff;border-left:3px solid #2563eb;border-radius:0 8px 8px 0;font-size:.82rem;color:#2563eb">📌 Analysis is included within this transcript document</div>'
+    );
+    if(p.key==='karthikeya') return personAcc('transcripts', p, buildFileViewer([
+      {name:'Transcript_185.pdf', label:'Transcript', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari185/Transcript_185.pdf'},
+    ]));
+    return personAcc('transcripts', p, `<div style="padding:1rem;background:#f9fafb;border-radius:10px;color:#9ca3af;font-size:.85rem;text-align:center">Files coming soon</div>`);
   }).join('');
 
   const analysisBody = PEOPLE.map(p=>{
-    if(p.key==='harshith'){
-      return personAcc('analysis', p, buildFileViewer([
-        {name:'Analysis_007.pdf', label:'Interview Analysis', url: BASE_007+'Analysis_007.pdf'},
-      ]));
-    }
-    if(p.key==='koushik'){
-      return personAcc('analysis', p, buildFileViewer([
-        {name:'Analysis_069.jpg', label:'Interview Analysis', url: BASE_069+'Analysis_069.jpg'},
-        {name:'Analysis_069.txt', label:'Analysis Notes', url: BASE_069+'Analysis_069.txt'},
-      ]));
-    }
-    return personAcc('analysis', p, buildDriveBox('analysis-'+p.key));
+    if(p.key==='harshith') return personAcc('analysis', p, buildFileViewer([
+      {name:'Analysis_007.pdf', label:'Interview Analysis', url: BASE_007+'Analysis_007.pdf'},
+    ]));
+    if(p.key==='koushik') return personAcc('analysis', p, buildFileViewer([
+      {name:'Analysis_069.jpg', label:'Interview Analysis', url: BASE_069+'Analysis_069.jpg'},
+      {name:'Analysis_069.txt', label:'Analysis Notes', url: BASE_069+'Analysis_069.txt'},
+    ]));
+    if(p.key==='saathvik') return personAcc('analysis', p,
+      '<div style="padding:.75rem 1rem;background:#eff6ff;border-left:3px solid #2563eb;border-radius:0 8px 8px 0;font-size:.82rem;color:#2563eb">📌 Analysis is included in Transcript_186.docx under Transcripts</div>'
+    );
+    if(p.key==='karthikeya') return personAcc('analysis', p, `<div style="padding:1rem;background:#f9fafb;border-radius:10px;color:#9ca3af;font-size:.85rem;text-align:center">Files coming soon</div>`);
+    return personAcc('analysis', p, `<div style="padding:1rem;background:#f9fafb;border-radius:10px;color:#9ca3af;font-size:.85rem;text-align:center">Files coming soon</div>`);
   }).join('');
 
   document.getElementById('page-interviews').innerHTML = `
@@ -650,20 +666,25 @@ function buildInterviews(){
 
 function buildPersonas(){
   const BASE_069 = 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari069/';
+  const BASE_186 = 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari186/';
   const body = PEOPLE.map(p=>{
-    if(p.key==='harshith'){
-      return personAcc('personas', p, buildFileViewer([
-        {name:'Personas_007.pdf', label:'Personas', url: BASE_007+'Personas_007.pdf'},
-      ]));
-    }
-    if(p.key==='koushik'){
-      return personAcc('personas', p, buildFileViewer([
-        {name:'Persona1_069.jpg', label:'Persona 1', url: BASE_069+'Persona1_069.jpg'},
-        {name:'Person2_069.jpg', label:'Persona 2', url: BASE_069+'Person2_069.jpg'},
-        {name:'Persona3_069.jpg', label:'Persona 3', url: BASE_069+'Persona3_069.jpg'},
-      ]));
-    }
-    return personAcc('personas', p, buildDriveBox('personas-'+p.key));
+    if(p.key==='harshith') return personAcc('personas', p, buildFileViewer([
+      {name:'Personas_007.pdf', label:'Personas', url: BASE_007+'Personas_007.pdf'},
+    ]));
+    if(p.key==='koushik') return personAcc('personas', p, buildFileViewer([
+      {name:'Persona1_069.jpg', label:'Persona 1', url: BASE_069+'Persona1_069.jpg'},
+      {name:'Person2_069.jpg', label:'Persona 2', url: BASE_069+'Person2_069.jpg'},
+      {name:'Persona3_069.jpg', label:'Persona 3', url: BASE_069+'Persona3_069.jpg'},
+    ]));
+    if(p.key==='saathvik') return personAcc('personas', p, buildFileViewer([
+      {name:'Persona1_186.jpg', label:'Persona 1', url: BASE_186+'Persona1_186.jpg'},
+      {name:'Persona2_186.jpg', label:'Persona 2', url: BASE_186+'Persona2_186.jpg'},
+      {name:'Persona3_186.jpg', label:'Persona 3', url: BASE_186+'Persona3_186.jpg'},
+    ]));
+    if(p.key==='karthikeya') return personAcc('personas', p, buildFileViewer([
+      {name:'Persona_185.pdf', label:'Personas', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari185/Persona_185.pdf'},
+    ]));
+    return personAcc('personas', p, `<div style="padding:1rem;background:#f9fafb;border-radius:10px;color:#9ca3af;font-size:.85rem;text-align:center">Files coming soon</div>`);
   }).join('');
 
   document.getElementById('page-personas').innerHTML = `
@@ -673,7 +694,7 @@ function buildPersonas(){
       <p>We gave faces to the data. From 21 interviews, we built personas that represent real teenage experiences.</p>
     </div>
     <div class="page-body">
-      ${secAcc('per-individual',`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`,'Individual Personas','Persona documents built from each team member\'s interviews.',body,true)}
+      ${secAcc('per-individual',`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`,'Individual Personas','Persona documents from each team member.',body,true)}
     </div>`;
 }
 
@@ -686,7 +707,8 @@ function buildJourneyMaps(){
       <p>We mapped emotional arcs through entire days. Where the system fails teenagers isn't always obvious.</p>
     </div>
     <div class="page-body">
-      ${secAcc('jm-main', mapSvg, 'Journey / Empathy Map', 'Step-by-step emotional journey and empathy maps for each persona.', buildDriveBox('journey-main'), true)}
+      ${secAcc('jm-main', mapSvg, 'Journey / Empathy Map', 'Step-by-step emotional journey and empathy maps for each persona.',
+        buildDriveBox('journey-main'), true)}
     </div>`;
 }
 
