@@ -443,7 +443,7 @@ const PEOPLE = [
 function fileExt(fname){ return fname.split('.').pop().toLowerCase(); }
 
 function fileBadge(ext){
-  const map={pdf:'badge-pdf',mp4:'badge-mp4',xlsx:'badge-xlsx',jpeg:'badge-jpeg',jpg:'badge-jpg',png:'badge-png'};
+  const map={pdf:'badge-pdf',mp4:'badge-mp4',m4a:'badge-mp4',mp3:'badge-mp4',xlsx:'badge-xlsx',jpeg:'badge-jpeg',jpg:'badge-jpeg',png:'badge-png',txt:'badge-pdf'};
   return map[ext]||'badge-pdf';
 }
 
@@ -587,12 +587,20 @@ function togglePerson(id){
 
 // ── Page builders ─────────────────────────────────────────────────────────
 function buildInterviews(){
+  const BASE_069 = 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari069/';
+
   const audioBody = PEOPLE.map(p=>{
     if(p.key==='harshith'){
       return personAcc('audio', p, buildFileViewer([
         {name:'Interview1_007.mp4', label:'Interview 1', url: BASE_007+'Interview1_007.mp4'},
         {name:'Interview2_007.mp4', label:'Interview 2', url: BASE_007+'Interview2_007.mp4'},
         {name:'Interview3_007.mp4', label:'Interview 3', url: BASE_007+'Interview3_007.mp4'},
+      ]));
+    }
+    if(p.key==='koushik'){
+      return personAcc('audio', p, buildFileViewer([
+        {name:'Interview1_069.m4a', label:'Interview 1', url: BASE_069+'Interview1_069.m4a'},
+        {name:'Interview2_069.m4a', label:'Interview 2', url: BASE_069+'Interview2_069.m4a'},
       ]));
     }
     return personAcc('audio', p, buildDriveBox('audio-'+p.key));
@@ -604,6 +612,11 @@ function buildInterviews(){
         {name:'Transcript_007.pdf', label:'Transcript', url: BASE_007+'Transcript_007.pdf'},
       ]));
     }
+    if(p.key==='koushik'){
+      return personAcc('transcripts', p, buildFileViewer([
+        {name:'Transcript_069.pdf', label:'Transcript', url: BASE_069+'Transcript_069.pdf'},
+      ]));
+    }
     return personAcc('transcripts', p, buildDriveBox('transcripts-'+p.key));
   }).join('');
 
@@ -611,6 +624,12 @@ function buildInterviews(){
     if(p.key==='harshith'){
       return personAcc('analysis', p, buildFileViewer([
         {name:'Analysis_007.pdf', label:'Interview Analysis', url: BASE_007+'Analysis_007.pdf'},
+      ]));
+    }
+    if(p.key==='koushik'){
+      return personAcc('analysis', p, buildFileViewer([
+        {name:'Analysis_069.jpg', label:'Interview Analysis', url: BASE_069+'Analysis_069.jpg'},
+        {name:'Analysis_069.txt', label:'Analysis Notes', url: BASE_069+'Analysis_069.txt'},
       ]));
     }
     return personAcc('analysis', p, buildDriveBox('analysis-'+p.key));
@@ -630,10 +649,18 @@ function buildInterviews(){
 }
 
 function buildPersonas(){
+  const BASE_069 = 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari069/';
   const body = PEOPLE.map(p=>{
     if(p.key==='harshith'){
       return personAcc('personas', p, buildFileViewer([
         {name:'Personas_007.pdf', label:'Personas', url: BASE_007+'Personas_007.pdf'},
+      ]));
+    }
+    if(p.key==='koushik'){
+      return personAcc('personas', p, buildFileViewer([
+        {name:'Persona1_069.jpg', label:'Persona 1', url: BASE_069+'Persona1_069.jpg'},
+        {name:'Person2_069.jpg', label:'Persona 2', url: BASE_069+'Person2_069.jpg'},
+        {name:'Persona3_069.jpg', label:'Persona 3', url: BASE_069+'Persona3_069.jpg'},
       ]));
     }
     return personAcc('personas', p, buildDriveBox('personas-'+p.key));
