@@ -647,7 +647,7 @@ function buildInterviews(){
     if(p.key==='saathvik') return personAcc('analysis', p,
       '<div style="padding:.75rem 1rem;background:#eff6ff;border-left:3px solid #2563eb;border-radius:0 8px 8px 0;font-size:.82rem;color:#2563eb">📌 Analysis is included in Transcript_186.docx under Transcripts</div>'
     );
-    if(p.key==='karthikeya') return personAcc('analysis', p, `<div style="padding:1rem;background:#f9fafb;border-radius:10px;color:#9ca3af;font-size:.85rem;text-align:center">Files coming soon</div>`);
+    if(p.key==='karthikeya') return personAcc('analysis', p, buildFileViewer([{name:'Analysis_185.docx', label:'Interview Analysis', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari185/Analysis_185.docx'}]));
     return personAcc('analysis', p, `<div style="padding:1rem;background:#f9fafb;border-radius:10px;color:#9ca3af;font-size:.85rem;text-align:center">Files coming soon</div>`);
   }).join('');
 
