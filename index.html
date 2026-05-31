@@ -212,6 +212,21 @@ footer{border-top:1px solid #e5e7eb;background:#f9fafb;padding:1.5rem 2rem}
 .footer-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.875rem;color:#6b7280}
 
 
+
+/* ── Outcomes section ────────────────────────────────────────── */
+.outcomes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:3rem}
+@media(max-width:900px){.outcomes-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.outcomes-grid{grid-template-columns:1fr}}
+.outcome-card{padding:1.75rem;background:#fff;border:1px solid #e5e7eb;border-radius:20px;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s}
+.outcome-card:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(37,99,235,.12);border-color:#bfdbfe}
+.outcome-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#2563eb,#7c3aed);opacity:0;transition:opacity .25s}
+.outcome-card:hover::after{opacity:1}
+.outcome-problem{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#9ca3af;margin-bottom:.75rem}
+.outcome-icon{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,rgba(37,99,235,.08),rgba(124,58,237,.08));display:flex;align-items:center;justify-content:center;margin-bottom:1rem;color:#2563eb;font-size:1.4rem}
+.outcome-title{font-weight:800;font-size:1rem;margin-bottom:.5rem;color:#111827}
+.outcome-desc{font-size:.85rem;color:#6b7280;line-height:1.65}
+.outcome-feature{display:inline-flex;align-items:center;gap:.35rem;margin-top:.9rem;padding:.3rem .75rem;background:linear-gradient(135deg,rgba(37,99,235,.07),rgba(124,58,237,.07));border-radius:9999px;font-size:.75rem;font-weight:600;color:#2563eb}
+
 /* ── DESIGN ENHANCEMENTS ─────────────────────────────────────── */
 
 /* Dot grid background on hero */
@@ -378,11 +393,38 @@ footer{border-top:1px solid #e5e7eb;background:#f9fafb;padding:1.5rem 2rem}
         <p class="sec-sub">The app we built because the data told us to. For teenagers who feel disconnected.</p>
       </div>
       <div class="features-grid">
-        <div class="feat-card reveal"><div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div><h3>Morning check-in</h3><p>A 30-second mood log that shapes your entire day. Quick, non-intrusive, and surprisingly powerful.</p></div>
-        <div class="feat-card reveal"><div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Peer circles</h3><p>Anonymous support groups matched by shared feeling. You are not alone — you just haven't found your people yet.</p></div>
-        <div class="feat-card reveal"><div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div><h3>Senior mentor match</h3><p>Paired with someone who has been through it. Real guidance, real empathy, not a chatbot.</p></div>
-        <div class="feat-card reveal"><div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h3>Micro-challenges</h3><p>Small daily actions that build real connection. Because connection is a skill, not a gift.</p></div>
-        <div class="feat-card reveal"><div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div><h3>Counsellor bridge</h3><p>A warm, not cold, path to school support. No cold forms, no waiting rooms — just a gentle bridge.</p></div>
+        <div class="feat-card reveal">
+          <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <h3>Home</h3><p>Your daily dashboard — a mood check-in, personalised prompts, and a gentle nudge to engage. The starting point for every session.</p>
+        </div>
+        <div class="feat-card reveal">
+          <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
+          <h3>Music</h3><p>Mood-matched audio to help teenagers regulate emotionally without needing to reach out to anyone. Sometimes a song is enough.</p>
+        </div>
+        <div class="feat-card reveal">
+          <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+          <h3>Rescue</h3><p>An immediate safe space when things feel overwhelming. One tap, no judgment, no forms — just a warm, instant bridge to support.</p>
+        </div>
+        <div class="feat-card reveal">
+          <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+          <h3>Wall</h3><p>A positive, non-comparative feed for genuine expression. No likes, no follower counts — just honest voices from people who get it.</p>
+        </div>
+        <div class="feat-card reveal">
+          <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+          <h3>Gallery</h3><p>A visual space to share moments, art, and creativity. Expression without the pressure of performance — because creativity is healing.</p>
+        </div>
+        <div class="feat-card reveal">
+          <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div>
+          <h3>Library</h3><p>Curated resources on mental health, relationships, and life skills. Knowledge that helps teenagers understand what they're going through.</p>
+        </div>
+        <div class="feat-card reveal">
+          <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div>
+          <h3>Journal</h3><p>A private daily reflection space. Process thoughts before speaking them — building self-awareness one entry at a time.</p>
+        </div>
+        <div class="feat-card reveal">
+          <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <h3>Rooms</h3><p>Anonymous group spaces matched by shared feeling. You are not alone — you just haven't found your people yet.</p>
+        </div>
       </div>
       <div class="belong-cta">
         <div>
@@ -393,6 +435,60 @@ footer{border-top:1px solid #e5e7eb;background:#f9fafb;padding:1.5rem 2rem}
         <div style="text-align:center">
           <div class="qr-box"><img src="qr.png" alt="QR Code"/></div>
           <div class="qr-lbl">Scan to open on your phone</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="outcomes">
+    <div class="cmd">
+      <div class="sec-hdr reveal">
+        <span class="sec-lbl">Final Outcomes</span>
+        <h2 class="sec-title">What <span>MindBloom</span> solves.</h2>
+        <p class="sec-sub">Our root cause analysis mapped 40+ factors behind teenage loneliness. MindBloom addresses the five that matter most.</p>
+      </div>
+      <div class="outcomes-grid">
+        <div class="outcome-card reveal">
+          <div class="outcome-problem">Problem 01</div>
+          <div class="outcome-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="outcome-title">Social media pressure & constant comparison</div>
+          <p class="outcome-desc">Teenagers drowning in curated perfection, toxic communities, and the relentless pressure to perform online. MindBloom replaces the scroll with something real.</p>
+          <div class="outcome-feature">✦ Wall — a positive, non-comparative feed</div>
+        </div>
+        <div class="outcome-card reveal">
+          <div class="outcome-problem">Problem 02</div>
+          <div class="outcome-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <div class="outcome-title">Family tension & breakdown of communication</div>
+          <p class="outcome-desc">Financial disputes, misunderstandings, and generational gaps leave teenagers feeling unheard at home. The Journal gives them a private space to process before they can speak.</p>
+          <div class="outcome-feature">✦ Journal — daily private reflection</div>
+        </div>
+        <div class="outcome-card reveal">
+          <div class="outcome-problem">Problem 03</div>
+          <div class="outcome-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div>
+          <div class="outcome-title">Academic pressure & fear of failure</div>
+          <p class="outcome-desc">Heavy workloads, poor work-life balance, and the weight of expectation create a cycle of anxiety. The Library offers curated resources and Music offers emotional regulation — on demand.</p>
+          <div class="outcome-feature">✦ Library & Music — emotional regulation</div>
+        </div>
+        <div class="outcome-card reveal">
+          <div class="outcome-problem">Problem 04</div>
+          <div class="outcome-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <div class="outcome-title">Isolation & the feeling of being alone</div>
+          <p class="outcome-desc">The deepest root we found: teenagers who feel like no one else understands. Rooms breaks that silence — anonymous group spaces matched by shared feeling, not demographics.</p>
+          <div class="outcome-feature">✦ Rooms — peer circles by shared feeling</div>
+        </div>
+        <div class="outcome-card reveal">
+          <div class="outcome-problem">Problem 05</div>
+          <div class="outcome-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+          <div class="outcome-title">Crisis moments with no safe exit</div>
+          <p class="outcome-desc">When things feel overwhelming, teenagers often have nowhere to turn that feels safe and immediate. Rescue is that exit — warm, judgment-free, and always one tap away.</p>
+          <div class="outcome-feature">✦ Rescue — immediate safe space</div>
+        </div>
+        <div class="outcome-card reveal" style="background:linear-gradient(135deg,#eff6ff,#f5f3ff);border-color:rgba(124,58,237,.15)">
+          <div class="outcome-problem">The Result</div>
+          <div class="outcome-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8C8 10 5.9 16.17 3.82 19.34a1 1 0 00.76 1.52 13 13 0 0013.38-4.93C19 13 20 8 20 4c-1 0-2 1-3 4z"/></svg></div>
+          <div class="outcome-title">A complete ecosystem for teen wellbeing</div>
+          <p class="outcome-desc">Not one feature. Not one fix. MindBloom is an integrated daily companion — built from 21 real interviews, 30+ survey responses, and 1,470 ideas filtered down to what actually helps.</p>
+          <div class="outcome-feature">✦ Built from evidence, not assumption</div>
         </div>
       </div>
     </div>
@@ -478,13 +574,13 @@ const BASE = 'https://harshithcheg.github.io/PrototypeSquad/files/';
 const BASE_007 = BASE + 'se24uari007/';
 
 const TEAM = [
-  {name:"Vakadani Koushik",roll:"SE24UARI069",initials:"VK",desc:"Research Lead & co-designer of the MindBloom app experience.",color:"#1d4ed8"},
-  {name:"Katkuri Saathvik",roll:"SE24UARI186",initials:"KS",desc:"Led ideation and synthesis across all 10 problem statements.",color:"#2563eb"},
-  {name:"Pati Gowri Karthikeya",roll:"SE24UARI185",initials:"GK",desc:"Handled data analysis and root cause mapping for the team.",color:"#4338ca"},
-  {name:"Chegondi Harshith",roll:"SE24UARI007",initials:"CH",desc:"Built journey maps and empathy frameworks for all personas.",color:"#0284c7"},
-  {name:"Katta Joshita Sai",roll:"SE24UARI067",initials:"JS",desc:"Designed and executed the survey instrument and consent workflow.",color:"#3b82f6"},
-  {name:"Duggi Gnana Sloka",roll:"SE24UARI162",initials:"GS",desc:"Crafted the persona documents and empathy research artifacts.",color:"#155e75"},
-  {name:"Kunapareddy Mounish",roll:"SE24UMCS097",initials:"KM",desc:"Developed and refined the final MindBloom concept and presentation.",color:"#3730a3"},
+  {name:"Vakadani Koushik",roll:"SE24UARI069",initials:"VK",desc:"Built and designed the MindBloom app prototype, led the technical development of the solution, co-led primary research as Research Lead, and contributed to the root cause analysis map.",color:"#1d4ed8"},
+  {name:"Katkuri Saathvik",roll:"SE24UARI186",initials:"KS",desc:"Conducted primary interviews with teenagers, built individual personas from research findings, and contributed to synthesis and analysis across the project.",color:"#2563eb"},
+  {name:"Pati Gowri Karthikeya",roll:"SE24UARI185",initials:"GK",desc:"Conducted primary interviews with teenagers, built individual personas, delivered interview analysis, and assisted in structuring the root cause analysis framework.",color:"#4338ca"},
+  {name:"Chegondi Harshith",roll:"SE24UARI007",initials:"CH",desc:"Built the entire portfolio website from scratch, drove the ideation process across all 10 problem statements, and coordinated research and file collection throughout the project.",color:"#0284c7"},
+  {name:"Katta Joshita Sai",roll:"SE24UARI067",initials:"JS",desc:"Conducted primary interviews with teenagers, built individual personas, and led the development of journey maps and empathy frameworks for the project.",color:"#3b82f6"},
+  {name:"Duggi Gnana Sloka",roll:"SE24UARI162",initials:"GS",desc:"Conducted primary interviews with teenagers, built individual personas, and was responsible for plotting and visualising the survey response data and analysis.",color:"#155e75"},
+  {name:"Kunapareddy Mounish",roll:"SE24UMCS097",initials:"KM",desc:"Conducted primary interviews with teenagers, built individual personas, and contributed actively to the ideation and concept development phases of the project.",color:"#3730a3"},
 ];
 
 const PHASES = [
@@ -994,7 +1090,7 @@ document.querySelectorAll('.reveal').forEach(el=>revealObs.observe(el));
 // ── Active nav on scroll ─────────────────────────────────────────────────
 function updateActiveNav(){
   if(!document.getElementById('page-home').classList.contains('active'))return;
-  const sections=['journey','belong','data','learnings','team'];
+  const sections=['journey','belong','outcomes','data','learnings','team'];
   const offset=80;
   let current='';
   sections.forEach(id=>{
