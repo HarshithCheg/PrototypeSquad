@@ -790,6 +790,7 @@ function buildInterviews(){
       {name:'Interview2_185.mp4', label:'Interview 2', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari185/Interview2_185.mp4'},
       {name:'Interview3_185.mp4', label:'Interview 3', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari185/Interview3_185.mp4'},
     ]));
+    if(p.key==='mounish') return personAcc('audio', p, buildFileViewer([{name:'Interview1_097.mp4', label:'Interview 1', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24umcs097/Interview1_097.mp4'}]));
     return personAcc('audio', p, `<div style="padding:1rem;background:#f9fafb;border-radius:10px;color:#9ca3af;font-size:.85rem;text-align:center">Files coming soon</div>`);
   }).join('');
 
@@ -807,6 +808,7 @@ function buildInterviews(){
     if(p.key==='karthikeya') return personAcc('transcripts', p, buildFileViewer([
       {name:'Transcript_185.pdf', label:'Transcript', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari185/Transcript_185.pdf'},
     ]));
+    if(p.key==='mounish') return personAcc('transcripts', p, buildFileViewer([{name:'Transcript.pdf', label:'Transcript', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24umcs097/Transcript.pdf'}]));
     return personAcc('transcripts', p, `<div style="padding:1rem;background:#f9fafb;border-radius:10px;color:#9ca3af;font-size:.85rem;text-align:center">Files coming soon</div>`);
   }).join('');
 
@@ -882,7 +884,7 @@ function buildJourneyMaps(){
     </div>
     <div class="page-body">
       ${secAcc('jm-main', mapSvg, 'Journey / Empathy Map', 'Step-by-step emotional journey and empathy maps for each persona.',
-        buildDriveBox('journey-main'), true)}
+        buildFileViewer([{name:'JourneyMaps.pdf', label:'Journey Maps', url: 'https://harshithcheg.github.io/PrototypeSquad/files/JourneyMaps.pdf'}]), true)}
     </div>`;
 }
 
