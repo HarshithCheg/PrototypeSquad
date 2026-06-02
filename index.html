@@ -213,6 +213,21 @@ footer{border-top:1px solid #e5e7eb;background:#f9fafb;padding:1.5rem 2rem}
 
 
 
+
+/* ── Analysis highlight card ─────────────────────────────────── */
+.analysis-card{display:flex;align-items:center;justify-content:space-between;gap:2rem;
+  background:linear-gradient(135deg,#1e40af,#2563eb,#4f46e5);
+  border-radius:24px;padding:2.5rem;margin-top:2.5rem;flex-wrap:wrap}
+.analysis-card-text h3{font-size:1.4rem;font-weight:800;color:#fff;margin-bottom:.5rem}
+.analysis-card-text p{color:rgba(255,255,255,.75);font-size:.9rem;max-width:480px;line-height:1.6;margin-bottom:1.5rem}
+.analysis-card-stats{display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.analysis-card-stat{text-align:center}
+.analysis-card-stat-num{font-size:1.8rem;font-weight:900;color:#fff;line-height:1}
+.analysis-card-stat-lbl{font-size:.72rem;color:rgba(255,255,255,.65);margin-top:.2rem;font-weight:500}
+.analysis-card-icon{width:120px;height:120px;border-radius:20px;background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+@media(max-width:768px){.analysis-card{flex-direction:column}.analysis-card-icon{display:none}}
+
 /* ── Outcomes section ────────────────────────────────────────── */
 .outcomes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:3rem}
 @media(max-width:900px){.outcomes-grid{grid-template-columns:repeat(2,1fr)}}
@@ -426,6 +441,29 @@ footer{border-top:1px solid #e5e7eb;background:#f9fafb;padding:1.5rem 2rem}
           <h3>Rooms</h3><p>Anonymous group spaces matched by shared feeling. You are not alone — you just haven't found your people yet.</p>
         </div>
       </div>
+      <div class="analysis-card reveal">
+        <div class="analysis-card-text">
+          <h3>How we chose what to build</h3>
+          <p>Every MindBloom feature traces back to real evidence — direct high-scoring ideas and indirect thematic patterns from our 1,450+ idea brainwriting session. We documented the full trail.</p>
+          <div class="analysis-card-stats">
+            <div class="analysis-card-stat"><div class="analysis-card-stat-num">8</div><div class="analysis-card-stat-lbl">features traced</div></div>
+            <div class="analysis-card-stat"><div class="analysis-card-stat-num">10</div><div class="analysis-card-stat-lbl">problem sheets</div></div>
+            <div class="analysis-card-stat"><div class="analysis-card-stat-num">1,450+</div><div class="analysis-card-stat-lbl">ideas evaluated</div></div>
+          </div>
+          <a href="https://harshithcheg.github.io/PrototypeSquad/files/MindBloom_IdeaAnalysis.pdf" target="_blank" rel="noopener noreferrer"
+            style="display:inline-flex;align-items:center;gap:.5rem;padding:.65rem 1.4rem;background:#fff;color:#2563eb;border-radius:9999px;font-weight:700;font-size:.875rem;text-decoration:none;transition:all .2s"
+            onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
+            Read the full analysis →
+          </a>
+        </div>
+        <div class="analysis-card-icon">
+          <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+            <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
+          </svg>
+        </div>
+      </div>
+
       <div class="belong-cta">
         <div>
           <h3>Try MindBloom now</h3>
@@ -920,7 +958,10 @@ function buildIdeation(){
         buildFileViewer([{name:'DT_ScoredIdeas.xlsx',label:'Scored Ideas',url:BASE+'DT_ScoredIdeas.xlsx'}]))}
       ${secAcc('id-matrix',`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>`,'Viability–Effort Matrix','Top ideas plotted to find quick-win candidates.',
         buildFileViewer([{name:'Viability-Effort.jpeg',label:'Viability–Effort Matrix',url:BASE+'Viability-Effort.jpeg'}]))}
-    </div>`;
+      ${secAcc('id-analysis',`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>`,'From Ideas to MindBloom — Analysis',
+        'How each MindBloom feature was traced back to direct and indirect evidence from the 1,450+ idea session.',
+        buildFileViewer([{name:'MindBloom_IdeaAnalysis.pdf',label:'MindBloom Idea Analysis',url:'https://harshithcheg.github.io/PrototypeSquad/files/MindBloom_IdeaAnalysis.pdf'}]))}
+    </div>\`;
 }
 
 function buildRootCause(){
