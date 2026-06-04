@@ -305,6 +305,30 @@ footer{border-top:1px solid #e5e7eb;background:#f9fafb;padding:1.5rem 2rem}
 /* Nicer footer CTA */
 .foot-cta{background:linear-gradient(180deg,#f8faff,#f0f4ff)}
 
+
+/* ── Poster section ──────────────────────────────────────────── */
+.poster-card{display:flex;align-items:center;justify-content:space-between;gap:2rem;
+  background:#fff;border:1px solid #e5e7eb;border-radius:24px;padding:2.5rem;flex-wrap:wrap;
+  transition:box-shadow .25s,border-color .25s}
+.poster-card:hover{box-shadow:0 12px 40px rgba(37,99,235,.1);border-color:#bfdbfe}
+.poster-card-text h3{font-size:1.4rem;font-weight:800;color:#111827;margin-bottom:.5rem}
+.poster-card-text p{color:#6b7280;font-size:.9rem;max-width:520px;line-height:1.6;margin-bottom:1.5rem}
+.poster-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem}
+.poster-tag{padding:.25rem .75rem;border-radius:9999px;background:#eff6ff;color:#2563eb;font-size:.75rem;font-weight:600}
+.poster-preview{width:160px;height:120px;border-radius:16px;border:1px solid #e5e7eb;
+  flex-shrink:0;background:linear-gradient(135deg,#eff6ff,#f5f3ff);display:flex;align-items:center;justify-content:center;color:#2563eb}
+@media(max-width:768px){.poster-preview{display:none}}
+
+
+/* ── Poster section ──────────────────────────────────────────── */
+.poster-card{display:flex;align-items:center;justify-content:space-between;gap:2rem;background:#fff;border:1px solid #e5e7eb;border-radius:24px;padding:2.5rem;flex-wrap:wrap;transition:box-shadow .25s,border-color .25s}
+.poster-card:hover{box-shadow:0 12px 40px rgba(37,99,235,.1);border-color:#bfdbfe}
+.poster-card-text h3{font-size:1.4rem;font-weight:800;color:#111827;margin-bottom:.5rem}
+.poster-card-text p{color:#6b7280;font-size:.9rem;max-width:520px;line-height:1.6;margin-bottom:1.5rem}
+.poster-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem}
+.poster-tag{padding:.25rem .75rem;border-radius:9999px;background:#eff6ff;color:#2563eb;font-size:.75rem;font-weight:600}
+.poster-preview{width:160px;height:120px;border-radius:16px;border:1px solid #e5e7eb;flex-shrink:0;background:linear-gradient(135deg,#eff6ff,#f5f3ff);display:flex;align-items:center;justify-content:center;color:#2563eb}
+@media(max-width:768px){.poster-preview{display:none}}
 @keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
 @keyframes fadeUpIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 .hero-content>*{animation:fadeUpIn .6s ease both}
@@ -328,6 +352,7 @@ footer{border-top:1px solid #e5e7eb;background:#f9fafb;padding:1.5rem 2rem}
       <button class="nav-btn" onclick="goSection('belong')" data-section="belong">MindBloom</button>
       <button class="nav-btn" onclick="goSection('data')" data-section="data">The Data</button>
       <button class="nav-btn" onclick="goSection('learnings')" data-section="learnings">Learnings</button>
+      <button class="nav-btn" onclick="goSection('poster')" data-section="poster">Poster</button>
       <button class="nav-btn" onclick="goSection('team')" data-section="team">Team</button>
       <div class="dropdown" id="files-dd">
         <button class="nav-btn" onclick="toggleDD()" style="display:flex;align-items:center;gap:.35rem">
@@ -354,6 +379,7 @@ footer{border-top:1px solid #e5e7eb;background:#f9fafb;padding:1.5rem 2rem}
     <button class="mob-link" onclick="goSection('belong');closeMob()">MindBloom</button>
     <button class="mob-link" onclick="goSection('data');closeMob()">The Data</button>
     <button class="mob-link" onclick="goSection('learnings');closeMob()">Learnings</button>
+    <button class="mob-link" onclick="goSection('poster');closeMob()">Poster</button>
     <button class="mob-link" onclick="goSection('team');closeMob()">Team</button>
     <span class="mob-label" style="margin-top:1rem">Files</span>
     <button class="mob-link" onclick="showPage('interviews');closeMob()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v4M8 23h8"/></svg> Interviews</button>
@@ -568,7 +594,39 @@ footer{border-top:1px solid #e5e7eb;background:#f9fafb;padding:1.5rem 2rem}
       </div>
     </div>
   </section>
-
+<section class="section" id="poster">
+    <div class="csm">
+      <div class="sec-hdr reveal">
+        <span class="sec-lbl">Design Thinking Project 2026</span>
+        <h2 class="sec-title">Project <span>Poster</span></h2>
+        <p class="sec-sub">Our official project poster submitted to Mahindra University School of Design Innovation — the full design thinking process on one page.</p>
+      </div>
+      <div class="poster-card reveal">
+        <div class="poster-card-text">
+          <h3>Loneliness Among Teenagers: Building Meaningful Connections Through Digital Support</h3>
+          <p>From primary user research and root cause analysis to HMW questions, ideation, and prototype flow — this poster captures everything Prototype Squad built across the semester in one place.</p>
+          <div class="poster-tags">
+            <span class="poster-tag">User Research</span>
+            <span class="poster-tag">Root Cause Analysis</span>
+            <span class="poster-tag">HMW Questions</span>
+            <span class="poster-tag">Ideation</span>
+            <span class="poster-tag">Prototype Flow</span>
+            <span class="poster-tag">Mahindra University</span>
+          </div>
+          <a href="https://harshithcheg.github.io/PrototypeSquad/files/Poster.pdf" target="_blank" rel="noopener noreferrer"
+            style="display:inline-flex;align-items:center;gap:.5rem;padding:.65rem 1.4rem;background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;border-radius:9999px;font-weight:700;font-size:.875rem;text-decoration:none;box-shadow:0 4px 14px rgba(37,99,235,.3)">
+            View Full Poster &#8594;
+          </a>
+        </div>
+        <div class="poster-preview">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+            <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
   <section class="section" id="team">
     <div class="cmd">
       <div class="sec-hdr reveal">
@@ -604,6 +662,7 @@ footer{border-top:1px solid #e5e7eb;background:#f9fafb;padding:1.5rem 2rem}
 <div class="page" id="page-ideation"></div>
 <div class="page" id="page-root-cause"></div>
 <div class="page" id="page-resources"></div>
+<div class="page" id="page-poster"></div>
 
 <footer>
   <div class="footer-inner">
@@ -823,11 +882,6 @@ function buildInterviews(){
       {name:'Interview2_185.mp4', label:'Interview 2', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari185/Interview2_185.mp4'},
       {name:'Interview3_185.mp4', label:'Interview 3', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari185/Interview3_185.mp4'},
     ]));
-    if(p.key==='karthikeya') return personAcc('audio', p, buildFileViewer([
-      {name:'Interview1_185.mp4', label:'Interview 1', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari185/Interview1_185.mp4'},
-      {name:'Interview2_185.mp4', label:'Interview 2', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari185/Interview2_185.mp4'},
-      {name:'Interview3_185.mp4', label:'Interview 3', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari185/Interview3_185.mp4'},
-    ]));
     if(p.key==='mounish') return personAcc('audio', p, buildFileViewer([{name:'Interview1_097.mp4', label:'Interview 1', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24umcs097/Interview1_097.mp4'},{name:'Interview2_097.mp4', label:'Interview 2', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24umcs097/Interview2_097.mp4'},{name:'Interview3_097.mp4', label:'Interview 3', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24umcs097/Interview3_097.mp4'}]));
     if(p.key==='joshita') return personAcc('audio', p, buildFileViewer([{name:'Interview1_067.mp4', label:'Interview 1', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari067/Interview1_067.mp4'},{name:'Interview2_067.mp4', label:'Interview 2', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari067/Interview2_067.mp4'},{name:'Interview3_067.mp4', label:'Interview 3', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari067/Interview3_067.mp4'}]));
     if(p.key==='sloka') return personAcc('audio', p, buildFileViewer([{name:'Interview1_162.mp4', label:'Interview 1', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari162/Interview1_162.mp4'},{name:'Interview2_162.mp4', label:'Interview 2', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari162/Interview2_162.mp4'},{name:'Interview3_162.mp4', label:'Interview 3', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari162/Interview3_162.mp4'}]));
@@ -869,9 +923,9 @@ function buildInterviews(){
     if(p.key==='joshita') return personAcc('analysis', p, buildFileViewer([{name:'Analysis_067.pdf', label:'Interview Analysis', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari067/Analysis_067.pdf'}]));
     if(p.key==='sloka') return personAcc('analysis', p, buildFileViewer([{name:'Analysis_162.pdf', label:'Interview Analysis', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari162/Analysis_162.pdf'}]));
     if(p.key==='mounish') return personAcc('analysis', p, buildFileViewer([{name:'Analysis_097.pdf', label:'Interview Analysis', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24umcs097/Analysis_097.pdf'}]));
-    if(p.key==='sloka') return personAcc('analysis', p, buildFileViewer([{name:'Analysis_162.pdf', label:'Interview Analysis', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari162/Analysis_162.pdf'}]));
-    if(p.key==='joshita') return personAcc('analysis', p, buildFileViewer([{name:'Analysis_067.pdf', label:'Interview Analysis', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24uari067/Analysis_067.pdf'}]));
-    if(p.key==='mounish') return personAcc('analysis', p, buildFileViewer([{name:'Analysis_097.pdf', label:'Interview Analysis', url: 'https://harshithcheg.github.io/PrototypeSquad/files/se24umcs097/Analysis_097.pdf'}]));
+
+
+
     return personAcc('analysis', p, `<div style="padding:1rem;background:#f9fafb;border-radius:10px;color:#9ca3af;font-size:.85rem;text-align:center">Files coming soon</div>`);
   }).join('');
 
@@ -1152,7 +1206,7 @@ document.querySelectorAll('.reveal').forEach(el=>revealObs.observe(el));
 // ── Active nav on scroll ─────────────────────────────────────────────────
 function updateActiveNav(){
   if(!document.getElementById('page-home').classList.contains('active'))return;
-  const sections=['journey','belong','outcomes','data','learnings','team'];
+  const sections=['journey','belong','outcomes','data','learnings','poster','team'];
   const offset=80;
   let current='';
   sections.forEach(id=>{
